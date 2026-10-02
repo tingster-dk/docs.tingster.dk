@@ -41,6 +41,35 @@ the code block and runs it in the box, so the preview and the copy-paste code ca
 The `data-widget-demo` value (`grid` / `swipe` / `card`) only sets the box's minimum height
 while the widget loads.
 
+## Languages
+
+English is the default and is served from the site root. Danish, German and Polish are built
+to `/da/`, `/de/` and `/pl/`, and the header gets a language picker.
+
+Translations live beside each page with a locale suffix:
+
+```
+docs/widgets/options.md      English (the default — no suffix)
+docs/widgets/options.da.md   Dansk
+docs/widgets/options.de.md   Deutsch
+docs/widgets/options.pl.md   Polski
+```
+
+A missing translation is **not** an error — that language simply falls back to the English
+page, so you can add a language or a page one file at a time. When you change an English page,
+update the three siblings or accept that readers see the old wording in their language.
+
+Section and page titles in the nav are translated in `mkdocs.yml` under each locale's
+`nav_translations`, keyed by the **English** title. Rename a nav entry in `nav:` and you must
+rename its key in all three `nav_translations` blocks too.
+
+Two things stay the same in every language: `{ #your-id }` on the seller-name heading in
+`widgets/index*.md` (cross-page links point at it), and the `data-widget-demo` markup for the
+live previews.
+
+`theme.features` deliberately does **not** include `navigation.instant` — it breaks the
+language picker's "stay on this page" behaviour.
+
 ## Source of truth
 
 The widget itself lives in `tingster-web-app` (`public/embed.js`, `lib/embed/`, `app/embed/`).
