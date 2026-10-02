@@ -30,6 +30,47 @@
   width: auto;
 }
 
+/* --- Landing hero ---------------------------------------------------------- */
+
+.hero {
+  text-align: center;
+  margin: 1rem auto 3rem;
+  max-width: 34rem;
+}
+
+.hero__logo {
+  width: 5.5rem;
+  height: auto;
+  margin: 0 auto 1.2rem;
+}
+
+.md-typeset .hero h1 {
+  margin: 0;
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+}
+
+/* No ¶ permalink on the hero title — it reads as a typo under a centred headline. */
+.md-typeset .hero h1 .headerlink {
+  display: none;
+}
+
+.md-typeset .hero__tagline {
+  margin: 0.3rem 0 1.1rem;
+  color: var(--tingster-orange);
+  font-weight: 600;
+}
+
+.md-typeset .hero__lead {
+  margin: 0;
+  color: var(--md-default-fg-color--light);
+  line-height: 1.7;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .hero__tagline {
+  color: var(--tingster-orange-light);
+}
+
 /* --- Live widget previews ------------------------------------------------- */
 
 .widget-demo {
