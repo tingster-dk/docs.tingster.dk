@@ -1,0 +1,123 @@
+/* Tingster brand. Orange #FF5722 with #FF7043 as the gradient partner — the same pair the
+   web app (app/globals.css) and the analytics templates use. */
+
+:root {
+  --tingster-orange: #FF5722;
+  --tingster-orange-light: #FF7043;
+
+  --md-primary-fg-color: var(--tingster-orange);
+  --md-primary-fg-color--light: var(--tingster-orange-light);
+  --md-primary-fg-color--dark: #E64A19;
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: rgba(255, 255, 255, 0.7);
+
+  --md-accent-fg-color: var(--tingster-orange);
+  --md-accent-fg-color--transparent: rgba(255, 87, 34, 0.1);
+}
+
+[data-md-color-scheme="slate"] {
+  /* Full-strength orange on a dark background is harsh for body links; lighten it there. */
+  --md-accent-fg-color: var(--tingster-orange-light);
+  --md-typeset-a-color: var(--tingster-orange-light);
+}
+
+[data-md-color-scheme="default"] {
+  --md-typeset-a-color: var(--tingster-orange);
+}
+
+.md-header__button.md-logo img {
+  height: 1.5rem;
+  width: auto;
+}
+
+/* --- Landing hero ---------------------------------------------------------- */
+
+.hero {
+  text-align: center;
+  margin: 1rem auto 3rem;
+  max-width: 34rem;
+}
+
+.hero__logo {
+  width: 5.5rem;
+  height: auto;
+  margin: 0 auto 1.2rem;
+}
+
+.md-typeset .hero h1 {
+  margin: 0;
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+}
+
+/* No ¶ permalink on the hero title — it reads as a typo under a centred headline. */
+.md-typeset .hero h1 .headerlink {
+  display: none;
+}
+
+.md-typeset .hero__tagline {
+  margin: 0.3rem 0 1.1rem;
+  color: var(--tingster-orange);
+  font-weight: 600;
+}
+
+.md-typeset .hero__lead {
+  margin: 0;
+  color: var(--md-default-fg-color--light);
+  line-height: 1.7;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .hero__tagline {
+  color: var(--tingster-orange-light);
+}
+
+/* --- Live widget previews ------------------------------------------------- */
+
+.widget-demo {
+  position: relative;
+  margin: 1.4em 0 0;
+  padding: 2.1rem 1rem 1rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.3rem;
+  background: var(--md-code-bg-color);
+  /* Held open while the iframe loads and reports its real height. Overridden per variant. */
+  min-height: 8rem;
+}
+
+.widget-demo::before {
+  content: "Live preview";
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.25rem 0.6rem;
+  border-radius: 0.3rem 0 0.3rem 0;
+  background: var(--tingster-orange);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Variant floors, so the box doesn't collapse or jump while loading. */
+.widget-demo[data-widget-demo="swipe"] { min-height: 38rem; }
+.widget-demo[data-widget-demo="card"]  { min-height: 27rem; }
+.widget-demo[data-widget-demo="grid"]  { min-height: 20rem; }
+
+/* swipe and card are fixed-width widgets — centre them in the full-width frame. */
+.widget-demo[data-widget-demo="swipe"] iframe,
+.widget-demo[data-widget-demo="card"] iframe {
+  margin: 0 auto;
+}
+
+.widget-demo__note {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+/* The snippet belongs to the preview above it: join them visually. */
+.widget-demo + .highlight > pre,
+.widget-demo + .highlight {
+  margin-top: 0;
+}

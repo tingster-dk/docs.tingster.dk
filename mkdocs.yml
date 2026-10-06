@@ -1,0 +1,126 @@
+site_name: Tingster Docs
+site_description: How to embed Tingster widgets in your own site.
+site_url: https://docs.tingster.dk/
+
+theme:
+  name: material
+  language: en
+  logo: assets/logo.svg
+  favicon: assets/favicon.svg
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.sections
+    - navigation.top
+    # navigation.instant is deliberately off: it breaks the i18n language switcher's
+    # "stay on this page" link, which matters more than the SPA-style page loads.
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+extra_css:
+  - assets/extra.css
+extra_javascript:
+  - assets/demo.js
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  # Resolves :material-*: / :fontawesome-*: shortcodes to inline SVG icons.
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - Home: index.md
+  - Widgets:
+      - Quick start: widgets/index.md
+      - The three widgets: widgets/variants.md
+      - Options: widgets/options.md
+      - Troubleshooting: widgets/troubleshooting.md
+
+# Translations live beside each page as <name>.<locale>.md — docs/index.da.md and so on.
+# English is the default and is served from the site root; the others get /da/, /de/, /pl/.
+# The language picker in the header is generated from this list.
+plugins:
+  # No explicit `lang:` — the i18n plugin's reconfigure_search sets a supported stemmer per
+  # build. lunr has no Polish stemmer, so pinning the list by hand breaks /pl/ search.
+  - search
+  - i18n:
+      docs_structure: suffix
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          name: English
+          default: true
+          build: true
+          site_description: How to embed Tingster widgets in your own site.
+        - locale: da
+          name: Dansk
+          build: true
+          site_description: Sådan indlejrer du Tingster-widgets på dit eget site.
+          nav_translations:
+            Home: Forside
+            Widgets: Widgets
+            Quick start: Kom godt i gang
+            The three widgets: De tre widgets
+            Options: Indstillinger
+            Troubleshooting: Fejlfinding
+        - locale: de
+          name: Deutsch
+          build: true
+          site_description: So binden Sie Tingster-Widgets auf Ihrer eigenen Website ein.
+          nav_translations:
+            Home: Start
+            Widgets: Widgets
+            Quick start: Schnellstart
+            The three widgets: Die drei Widgets
+            Options: Optionen
+            Troubleshooting: Fehlerbehebung
+        - locale: pl
+          name: Polski
+          build: true
+          site_description: Jak osadzić widżety Tingster na własnej stronie.
+          nav_translations:
+            Home: Start
+            Widgets: Widżety
+            Quick start: Szybki start
+            The three widgets: Trzy widżety
+            Options: Opcje
+            Troubleshooting: Rozwiązywanie problemów
+
+extra:
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://tingster.dk
+      name: tingster.dk
+
+copyright: © Tingster
