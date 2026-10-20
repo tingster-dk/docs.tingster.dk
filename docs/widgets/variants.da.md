@@ -21,7 +21,7 @@ side, der er dedikeret til "vores auktioner".
 I størrelse til en sidebar eller en annonceplads (300×600 som standard). De besøgende swiper,
 trækker eller bruger piletasterne; siger de ja, åbner varen på Tingster i en ny fane.
 
-<div class="widget-demo" data-widget-demo="swipe"></div>
+<div class="widget-demo" data-widget-demo="swipe" data-demo-seller=""></div>
 
 ```html
 <aside style="width: 300px">
@@ -39,7 +39,7 @@ trækker eller bruger piletasterne; siger de ja, åbner varen på Tingster i en 
 
 ## `card` — én bestemt vare
 
-<div class="widget-demo" data-widget-demo="card"></div>
+<div class="widget-demo" data-widget-demo="card" data-demo-product="0hn7eQxkL2YIllaTjdwX"></div>
 
 ```html
 <script src="https://shop.tingster.dk/embed.js"

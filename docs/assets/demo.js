@@ -12,6 +12,10 @@
  * The snippet in the code block is the single source of truth: this file reads it back out of
  * the rendered page and runs it inside the box above, so the preview and the code the reader
  * copies can never drift apart.
+ *
+ * A data-demo-<name> attribute on the box overrides data-<name> on the snippet's script for the
+ * preview only, so placeholders like data-seller can be swapped for live values. An empty
+ * value removes the attribute.
  */
 (function () {
   'use strict';
@@ -41,6 +45,7 @@
         var attribute = source.attributes[a];
         script.setAttribute(attribute.name, attribute.value);
       }
+      applyOverrides(box, script);
       script.text = source.text;
       script.onerror = function () { fallback(box); };
       source.parentNode.replaceChild(script, source);
@@ -48,6 +53,19 @@
 
     while (staging.firstChild) {
       box.appendChild(staging.firstChild);
+    }
+  }
+
+  function applyOverrides(box, script) {
+    for (var i = 0; i < box.attributes.length; i++) {
+      var attribute = box.attributes[i];
+      if (attribute.name.indexOf('data-demo-') !== 0 || attribute.name === RENDERED) continue;
+      var target = 'data-' + attribute.name.slice('data-demo-'.length);
+      if (attribute.value === '') {
+        script.removeAttribute(target);
+      } else {
+        script.setAttribute(target, attribute.value);
+      }
     }
   }
 

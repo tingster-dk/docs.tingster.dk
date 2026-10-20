@@ -21,7 +21,7 @@ a dedicated "our auctions" page.
 Sized for a sidebar or ad slot (300×600 by default). Visitors swipe, drag, or use the arrow
 keys; accepting opens that item on Tingster in a new tab.
 
-<div class="widget-demo" data-widget-demo="swipe"></div>
+<div class="widget-demo" data-widget-demo="swipe" data-demo-seller=""></div>
 
 ```html
 <aside style="width: 300px">
@@ -39,7 +39,7 @@ keys; accepting opens that item on Tingster in a new tab.
 
 ## `card` — one specific item
 
-<div class="widget-demo" data-widget-demo="card"></div>
+<div class="widget-demo" data-widget-demo="card" data-demo-product="0hn7eQxkL2YIllaTjdwX"></div>
 
 ```html
 <script src="https://shop.tingster.dk/embed.js"

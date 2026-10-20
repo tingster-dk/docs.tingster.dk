@@ -22,7 +22,7 @@ Passend für eine Sidebar oder einen Werbeplatz (standardmäßig 300×600). Besu
 ziehen oder nutzen die Pfeiltasten; beim Annehmen öffnet sich das Los auf Tingster in einem
 neuen Tab.
 
-<div class="widget-demo" data-widget-demo="swipe"></div>
+<div class="widget-demo" data-widget-demo="swipe" data-demo-seller=""></div>
 
 ```html
 <aside style="width: 300px">
@@ -40,7 +40,7 @@ neuen Tab.
 
 ## `card` — ein einzelnes Los
 
-<div class="widget-demo" data-widget-demo="card"></div>
+<div class="widget-demo" data-widget-demo="card" data-demo-product="0hn7eQxkL2YIllaTjdwX"></div>
 
 ```html
 <script src="https://shop.tingster.dk/embed.js"
