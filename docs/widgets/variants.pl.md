@@ -22,7 +22,7 @@ W rozmiarze paska bocznego albo slotu reklamowego (domyślnie 300×600). Odwiedz
 przesuwają, przeciągają albo używają strzałek; przyjęcie otwiera daną ofertę na Tingsterze w
 nowej karcie.
 
-<div class="widget-demo" data-widget-demo="swipe"></div>
+<div class="widget-demo" data-widget-demo="swipe" data-demo-seller=""></div>
 
 ```html
 <aside style="width: 300px">
@@ -40,7 +40,7 @@ nowej karcie.
 
 ## `card` — jedna konkretna oferta
 
-<div class="widget-demo" data-widget-demo="card"></div>
+<div class="widget-demo" data-widget-demo="card" data-demo-product="0hn7eQxkL2YIllaTjdwX"></div>
 
 ```html
 <script src="https://shop.tingster.dk/embed.js"
